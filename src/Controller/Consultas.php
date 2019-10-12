@@ -3,6 +3,7 @@
     namespace App\Controller;
     use App\Entity\Producto;
     use App\Entity\Categoria;
+    use App\Entity\Restaurantes;
     use Symfony\Component\HttpFoundation\Response;
     use Symfony\Component\Routing\Annotation\Route;
     use Symfony\Component\HttpFoundation\Request;

@@ -69,6 +69,7 @@
            $productos=$this->getDoctrine()
            ->getRepository(Producto::class)
            ->findProductos();
+         
            return new JsonResponse($productos);
             
         }

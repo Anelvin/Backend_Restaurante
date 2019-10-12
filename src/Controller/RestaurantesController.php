@@ -1,4 +1,5 @@
 <?php
+
     namespace App\Controller;
 
     use App\Entity\Restaurantes;
@@ -9,19 +10,22 @@
     use Doctrine\ORM\EntityManagerInterface;
     use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
     use Doctrine\Bundle\DoctrineBundle\Registry;
-    
-    /**
-     * @Route ("/restaurantes")
-     */
-    class RestaurantesController extends AbstractController{
 
+    /**
+     * @Route("/restaurantes")
+     */
+    class RestaurantesController extends AbstractController
+    {
         /**
-         * @Route ("/", name="lista_restaurantes")
+         * @Route("/consultar", name="lista_restaurantes")
          */
-        public function listarRestaurantes(){
-            $restaurantes=$this->getDoctrine()->getRepository(Restaurantes::class)
+        public function listarRestaurantes(Request $request)
+        {
+            $restaurantes=$this->getDoctrine()
+            ->getRepository(Restaurantes::class)
             ->findRestaurantes();
             return new JsonResponse($restaurantes);
         }
+    
     }
 ?>
